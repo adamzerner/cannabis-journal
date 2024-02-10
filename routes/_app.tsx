@@ -10,6 +10,8 @@ export default ({ Component }: PageProps) => {
         <title>Cannabis Journal</title>
         <link rel="stylesheet" href="/styles.css" />
         <link rel="stylesheet" href={getStylesheetUrl()} />
+        <link rel="stylesheet" href="/prism.css" />
+        <script src="/prism.js"></script>
       </head>
       <body>
         <Component />

@@ -1,9 +1,9 @@
-import { Button } from "rfui";
+import { CodeBlock } from "rfui";
 
 export default () => {
   return (
     <div>
-      Hello world <Button>Example</Button>
+      Hello world <CodeBlock language="tsx" code={`<div>hello world</div>`} />
     </div>
   );
 };

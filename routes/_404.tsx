@@ -1,14 +1,15 @@
-import { Head } from "$fresh/runtime.ts";
+import { H1, Text } from "rfui";
 
 export default () => {
   return (
-    <>
-      <Head>
-        <title>404 - Page not found</title>
-      </Head>
-      <div>
-        404 - Page note found
-      </div>
-    </>
+    <div class="max-w-prose text-lg">
+      <H1>Page not found</H1>
+      <Text>
+        <p>
+          The page you tried to access does not exist on
+          cannabis-journal.deno.dev.
+        </p>
+      </Text>
+    </div>
   );
 };

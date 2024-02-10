@@ -4,10 +4,10 @@ export default () => {
   return (
     <>
       <Head>
-        <title>404 - Page not found</title>
+        <title>500 - Unexpected error</title>
       </Head>
       <div>
-        404 - Page note found
+        500 - Unexpected errord
       </div>
     </>
   );

@@ -1,4 +1,5 @@
 import { type PageProps } from "$fresh/server.ts";
+import { getStylesheetUrl } from "rfui";
 
 export default ({ Component }: PageProps) => {
   return (
@@ -8,6 +9,7 @@ export default ({ Component }: PageProps) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Cannabis Journal</title>
         <link rel="stylesheet" href="/styles.css" />
+        <link rel="stylesheet" href={getStylesheetUrl()} />
       </head>
       <body>
         <Component />

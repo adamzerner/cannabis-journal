@@ -1,7 +1,9 @@
+import { Button } from "rfui";
+
 export default () => {
   return (
     <div>
-      Hello world
+      Hello world <Button>Example</Button>
     </div>
   );
 };

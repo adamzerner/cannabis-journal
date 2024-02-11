@@ -4,6 +4,7 @@
 
 import * as $_auth_forgot_email_forgot_email from "./routes/(auth)/(forgot-email)/forgot-email.tsx";
 import * as $_auth_forgot_password_forgot_password from "./routes/(auth)/(forgot-password)/forgot-password.tsx";
+import * as $_auth_log_out_log_out from "./routes/(auth)/(log-out)/log-out.ts";
 import * as $_auth_profile_profile from "./routes/(auth)/(profile)/profile.tsx";
 import * as $_auth_register_register from "./routes/(auth)/(register)/register.tsx";
 import * as $_auth_set_new_password_set_new_password from "./routes/(auth)/(set-new-password)/set-new-password.tsx";
@@ -23,6 +24,7 @@ const manifest = {
       $_auth_forgot_email_forgot_email,
     "./routes/(auth)/(forgot-password)/forgot-password.tsx":
       $_auth_forgot_password_forgot_password,
+    "./routes/(auth)/(log-out)/log-out.ts": $_auth_log_out_log_out,
     "./routes/(auth)/(profile)/profile.tsx": $_auth_profile_profile,
     "./routes/(auth)/(register)/register.tsx": $_auth_register_register,
     "./routes/(auth)/(set-new-password)/set-new-password.tsx":

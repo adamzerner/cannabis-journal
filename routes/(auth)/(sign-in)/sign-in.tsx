@@ -1,11 +1,13 @@
 import { Button, Flex, FormField, H1, Link } from "rfui";
 import { PasswordInput } from "@/islands/password-input.tsx";
 
+export { handler } from "./(_helpers)/handler.ts";
+
 export default () => {
   return (
     <main>
       <H1>Sign in</H1>
-      <form class="flex flex-col gap-5 w-[600px]">
+      <form method="post" class="flex flex-col gap-5 w-[600px]">
         <FormField
           required
           label="Email"

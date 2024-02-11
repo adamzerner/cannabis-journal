@@ -14,11 +14,11 @@ export const handler: Handlers = {
 
     if (!email) {
       return redirect(
-        "/sign-in?alert=You forgot to enter an email.&alertType=danger",
+        "/sign-in?alert=You forgot to enter an email.&alertVariant=danger",
       );
     } else if (!password) {
       return redirect(
-        "/sign-in?alert=You forgot to enter a password.&alertType=danger",
+        "/sign-in?alert=You forgot to enter a password.&alertVariant=danger",
       );
     }
 

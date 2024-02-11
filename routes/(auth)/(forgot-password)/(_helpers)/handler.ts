@@ -15,7 +15,7 @@ export const handler: Handlers = {
     const user = null; // TODO fetch user by email
 
     if (!user) {
-      console.error(`Email entered with no corresponding user: ${email}`);
+      console.warn(`Email entered with no corresponding user: ${email}`);
 
       // We don't want to let people know what emails are in use by giving an error message here.
       return redirect(

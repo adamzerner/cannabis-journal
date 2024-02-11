@@ -1,7 +1,7 @@
 import { PageProps } from "$fresh/server.ts";
 import { AlertBody, AlertType, Container } from "rfui";
-import { Navbar } from "../components/layout/navbar.tsx";
-import { Alert } from "../islands/alert.tsx";
+import { Navbar } from "@/components/layout/navbar.tsx";
+import { Alert } from "@/islands/alert.tsx";
 
 export default ({ Component, route, url }: PageProps) => {
   const searchParams = new URL(url).searchParams;

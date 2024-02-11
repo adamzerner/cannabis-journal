@@ -2,23 +2,40 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
+import * as $_auth_forgot_email_forgot_email from "./routes/(auth)/(forgot-email)/forgot-email.tsx";
+import * as $_auth_forgot_password_forgot_password from "./routes/(auth)/(forgot-password)/forgot-password.tsx";
+import * as $_auth_profile_profile from "./routes/(auth)/(profile)/profile.tsx";
+import * as $_auth_register_register from "./routes/(auth)/(register)/register.tsx";
+import * as $_auth_set_new_password_set_new_password from "./routes/(auth)/(set-new-password)/set-new-password.tsx";
+import * as $_auth_sign_in_sign_in from "./routes/(auth)/(sign-in)/sign-in.tsx";
 import * as $_404 from "./routes/_404.tsx";
 import * as $_500 from "./routes/_500.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $_layout from "./routes/_layout.tsx";
 import * as $index from "./routes/index.tsx";
-
+import * as $password_input from "./islands/password-input.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
+    "./routes/(auth)/(forgot-email)/forgot-email.tsx":
+      $_auth_forgot_email_forgot_email,
+    "./routes/(auth)/(forgot-password)/forgot-password.tsx":
+      $_auth_forgot_password_forgot_password,
+    "./routes/(auth)/(profile)/profile.tsx": $_auth_profile_profile,
+    "./routes/(auth)/(register)/register.tsx": $_auth_register_register,
+    "./routes/(auth)/(set-new-password)/set-new-password.tsx":
+      $_auth_set_new_password_set_new_password,
+    "./routes/(auth)/(sign-in)/sign-in.tsx": $_auth_sign_in_sign_in,
     "./routes/_404.tsx": $_404,
     "./routes/_500.tsx": $_500,
     "./routes/_app.tsx": $_app,
     "./routes/_layout.tsx": $_layout,
     "./routes/index.tsx": $index,
   },
-  islands: {},
+  islands: {
+    "./islands/password-input.tsx": $password_input,
+  },
   baseUrl: import.meta.url,
 } satisfies Manifest;
 

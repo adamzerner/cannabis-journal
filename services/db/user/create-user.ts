@@ -13,8 +13,8 @@ export const createUser = async (user: User) => {
     throw new Error(`A user with the email of ${user.email} already exists.`);
   }
 
-  return Promise.all([
-    kv.set(["users", "id", user.id], user),
-    kv.set(["users", "email", user.email], user),
-  ]);
+  return kv.atomic()
+    .set(["users", "id", user.id], user)
+    .set(["users", "email", user.email], user)
+    .commit();
 };

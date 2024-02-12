@@ -1,9 +1,13 @@
-import { Button, Card, CardBody, CardHeader, H1, Link, Text } from "rfui";
+import { PageProps } from "$fresh/server.ts";
+import { Button, H1, Link, Text } from "rfui";
+import { MiddlewareState } from "@/types/index.ts";
 
-export default () => {
-  const user = {
-    email: "johndoe@example.com",
-  };
+export default ({ state }: PageProps<unknown, MiddlewareState>) => {
+  const user = state.user;
+
+  if (!user) {
+    return <main>You are not logged in.</main>;
+  }
 
   return (
     <main>

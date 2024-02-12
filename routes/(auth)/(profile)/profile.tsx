@@ -1,4 +1,4 @@
-import { H1, Link, Text } from "rfui";
+import { Button, Card, CardBody, CardHeader, H1, Link, Text } from "rfui";
 
 export default () => {
   const user = {
@@ -30,6 +30,9 @@ export default () => {
             <Link href="/sign-in">sign in page</Link>.
           </div>
         </div>
+        <Button class="self-start" variant="danger-secondary">
+          Delete account
+        </Button>
       </Text>
     </main>
   );

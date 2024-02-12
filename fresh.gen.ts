@@ -13,9 +13,12 @@ import * as $_404 from "./routes/_404.tsx";
 import * as $_500 from "./routes/_500.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $_layout from "./routes/_layout.tsx";
+import * as $admin_index from "./routes/admin/index.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $alert from "./islands/alert.tsx";
 import * as $password_input from "./islands/password-input.tsx";
+import * as $admin_islands_record from "./routes/admin/(_islands)/record.tsx";
+import * as $admin_islands_records from "./routes/admin/(_islands)/records.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -34,11 +37,14 @@ const manifest = {
     "./routes/_500.tsx": $_500,
     "./routes/_app.tsx": $_app,
     "./routes/_layout.tsx": $_layout,
+    "./routes/admin/index.tsx": $admin_index,
     "./routes/index.tsx": $index,
   },
   islands: {
     "./islands/alert.tsx": $alert,
     "./islands/password-input.tsx": $password_input,
+    "./routes/admin/(_islands)/record.tsx": $admin_islands_record,
+    "./routes/admin/(_islands)/records.tsx": $admin_islands_records,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

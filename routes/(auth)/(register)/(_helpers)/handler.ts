@@ -1,18 +1,22 @@
 import { Handlers } from "$fresh/server.ts";
 import { getHashedValue, redirect } from "@/utilities/index.ts";
+import { createUser, fetchUserByEmail } from "@/services/db/index.ts";
 
 export const handler: Handlers = {
   POST: async (req) => {
     const form = await req.formData();
     const email = form.get("email")?.toString();
     const password = form.get("password")?.toString();
-    const isEmailInUse = false; // TODO
 
     if (!email) {
       return redirect(
         "/register?alert=An email is required.&alertVariant=danger",
       );
-    } else if (isEmailInUse) {
+    }
+
+    const isEmailInUse = !!(await fetchUserByEmail(email)).value;
+
+    if (isEmailInUse) {
       return redirect(
         "/register?alert=That email is already in use.&alertVariant=danger",
       );
@@ -28,7 +32,13 @@ export const handler: Handlers = {
 
     const hashedPassword = await getHashedValue(password);
 
-    // write to DB
+    await createUser({
+      id: crypto.randomUUID(),
+      createdAt: Date.now(),
+      email,
+      hashedPassword,
+      resetPasswordToken: null,
+    });
 
     return redirect(
       "/sign-in?alert=You have been successfully registered.&alertVariant=success",

@@ -8,3 +8,4 @@ export { destroyUser } from "./user/destroy-user.ts";
 
 export { createSession } from "./session/create-session.ts";
 export { destroySession } from "./session/destroy-session.ts";
+export { fetchUserIdFromSession } from "./session/fetch-user-id-from-session.ts";

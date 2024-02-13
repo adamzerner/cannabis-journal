@@ -1,6 +1,6 @@
 import { Handlers } from "$fresh/server.ts";
 import { getHashedValue, redirect } from "@/utilities/index.ts";
-import { createUser, fetchUserByEmail } from "@/services/db/index.ts";
+import { checkIfEmailInUse, createUser } from "@/services/db/index.ts";
 
 export const handler: Handlers = {
   POST: async (req) => {
@@ -14,7 +14,7 @@ export const handler: Handlers = {
       );
     }
 
-    const isEmailInUse = !!(await fetchUserByEmail(email));
+    const isEmailInUse = await checkIfEmailInUse(email);
 
     if (isEmailInUse) {
       return redirect(

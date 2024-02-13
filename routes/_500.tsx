@@ -2,6 +2,9 @@ import { CodeBlock, H1, Link, Text } from "rfui";
 import { PageProps } from "$fresh/server.ts";
 
 export default ({ error }: PageProps) => {
+  console.error("There was an unexpected error that was caught by `_500.tsx`.");
+  console.error(error);
+
   return (
     <div class="max-w-prose text-lg">
       <H1>Unexpected error</H1>

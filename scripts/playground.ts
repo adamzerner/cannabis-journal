@@ -1,3 +1,4 @@
+// deno-lint-ignore-file no-unused-vars
 // To run: deno run --unstable-kv scripts/playground.ts
 
 import { kv } from "@/services/db/index.ts";

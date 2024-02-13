@@ -1,3 +1,5 @@
+// deno-lint-ignore-file
+
 /* PrismJS 1.29.0
 https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+jsx+tsx+typescript&plugins=toolbar+copy-to-clipboard */
 var _self = "undefined" != typeof window
@@ -467,8 +469,7 @@ Prism.languages.markup = {
         lookbehind: !0,
         greedy: !0,
         inside: t,
-      },
-        Prism.languages.insertBefore("markup", "cdata", n);
+      }, Prism.languages.insertBefore("markup", "cdata", n);
     },
   }),
   Object.defineProperty(Prism.languages.markup.tag, "addAttribute", {
@@ -557,8 +558,7 @@ Prism.languages.markup = {
     important: /!important\b/i,
     function: { pattern: /(^|[^-a-z0-9])[-a-z0-9]+(?=\()/i, lookbehind: !0 },
     punctuation: /[(){};:,]/,
-  },
-    s.languages.css.atrule.inside.rest = s.languages.css;
+  }, s.languages.css.atrule.inside.rest = s.languages.css;
   var t = s.languages.markup;
   t && (t.tag.addInlined("style", "css"), t.tag.addAttribute("style", "css"));
 }(Prism);
@@ -881,9 +881,7 @@ Prism.languages.javascript = Prism.languages.extend("clike", {
               for (; e;) {
                 var t = e.getAttribute("data-toolbar-order");
                 if (null != t) {
-                  return (t = t.trim()).length
-                    ? t.split(/\s*,\s*/g)
-                    : [];
+                  return (t = t.trim()).length ? t.split(/\s*,\s*/g) : [];
                 }
                 e = e.parentElement;
               }
@@ -920,8 +918,7 @@ Prism.languages.javascript = Prism.languages.extend("clike", {
             n.textContent = r),
           n;
       }
-    }),
-      Prism.hooks.add("complete", r);
+    }), Prism.hooks.add("complete", r);
   }
 }();
 !function () {
@@ -959,7 +956,8 @@ Prism.languages.javascript = Prism.languages.extend("clike", {
             };
             for (var o in e) {
               for (
-                var n = "data-prismjs-" + o, c = t; c && !c.hasAttribute(n);
+                var n = "data-prismjs-" + o, c = t;
+                c && !c.hasAttribute(n);
               ) c = c.parentElement;
               c && (e[o] = c.getAttribute(n));
             }

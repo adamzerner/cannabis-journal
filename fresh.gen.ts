@@ -18,6 +18,7 @@ import * as $admin_index from "./routes/admin/index.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $alert from "./islands/alert.tsx";
 import * as $password_input from "./islands/password-input.tsx";
+import * as $_auth_profile_islands_delete_account_form from "./routes/(auth)/(profile)/(_islands)/delete-account-form.tsx";
 import * as $admin_islands_record from "./routes/admin/(_islands)/record.tsx";
 import * as $admin_islands_records from "./routes/admin/(_islands)/records.tsx";
 import { type Manifest } from "$fresh/server.ts";
@@ -45,6 +46,8 @@ const manifest = {
   islands: {
     "./islands/alert.tsx": $alert,
     "./islands/password-input.tsx": $password_input,
+    "./routes/(auth)/(profile)/(_islands)/delete-account-form.tsx":
+      $_auth_profile_islands_delete_account_form,
     "./routes/admin/(_islands)/record.tsx": $admin_islands_record,
     "./routes/admin/(_islands)/records.tsx": $admin_islands_records,
   },

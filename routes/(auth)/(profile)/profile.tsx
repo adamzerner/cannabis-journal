@@ -1,6 +1,7 @@
 import { PageProps } from "$fresh/server.ts";
 import { Button, H1, Link, Text } from "rfui";
 import { MiddlewareState } from "@/types/index.ts";
+import { DeleteAccountForm } from "./(_islands)/delete-account-form.tsx";
 
 export default ({ state }: PageProps<unknown, MiddlewareState>) => {
   const user = state.user;
@@ -34,9 +35,7 @@ export default ({ state }: PageProps<unknown, MiddlewareState>) => {
             <Link href="/sign-in">sign in page</Link>.
           </div>
         </div>
-        <Button class="self-start" variant="danger-secondary">
-          Delete account
-        </Button>
+        <DeleteAccountForm />
       </Text>
     </main>
   );

@@ -1,5 +1,6 @@
 import { Handlers } from "$fresh/server.ts";
 import { redirect } from "@/utilities/index.ts";
+import { fetchUserByEmail, updateUser } from "@/services/db/index.ts";
 
 export const handler: Handlers = {
   POST: async (req) => {
@@ -12,11 +13,9 @@ export const handler: Handlers = {
       );
     }
 
-    const user = null; // TODO fetch user by email
+    const user = await fetchUserByEmail(email);
 
     if (!user) {
-      console.warn(`Email entered with no corresponding user: ${email}`);
-
       // We don't want to let people know what emails are in use by giving an error message here.
       return redirect(
         "/forgot-password?alert=You'll receive an email with instructions for resetting your password.&alertVariant=success",
@@ -25,7 +24,10 @@ export const handler: Handlers = {
 
     const resetPasswordToken = crypto.randomUUID();
 
-    // TODO update user in DB with `resetPasswordToken`
+    await updateUser({
+      ...user,
+      resetPasswordToken,
+    });
 
     // TODO set up Resend
     const resendApiResponse = await fetch("https://api.resend.com/emails", {

@@ -20,6 +20,9 @@ export const Navbar = (
               <NavbarItem href="/profile" isActive={route === "/profile"}>
                 Profile
               </NavbarItem>
+              <NavbarItem href="/log-out">
+                Log out
+              </NavbarItem>
             </>
           )
           : (

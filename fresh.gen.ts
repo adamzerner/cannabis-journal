@@ -2,18 +2,26 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
+import * as $_auth_forgot_email_middleware from "./routes/(auth)/(forgot-email)/_middleware.ts";
 import * as $_auth_forgot_email_forgot_email from "./routes/(auth)/(forgot-email)/forgot-email.tsx";
+import * as $_auth_forgot_password_middleware from "./routes/(auth)/(forgot-password)/_middleware.ts";
 import * as $_auth_forgot_password_forgot_password from "./routes/(auth)/(forgot-password)/forgot-password.tsx";
+import * as $_auth_log_out_middleware from "./routes/(auth)/(log-out)/_middleware.ts";
 import * as $_auth_log_out_log_out from "./routes/(auth)/(log-out)/log-out.ts";
+import * as $_auth_profile_middleware from "./routes/(auth)/(profile)/_middleware.ts";
 import * as $_auth_profile_profile from "./routes/(auth)/(profile)/profile.tsx";
+import * as $_auth_register_middleware from "./routes/(auth)/(register)/_middleware.ts";
 import * as $_auth_register_register from "./routes/(auth)/(register)/register.tsx";
+import * as $_auth_set_new_password_middleware from "./routes/(auth)/(set-new-password)/_middleware.ts";
 import * as $_auth_set_new_password_set_new_password from "./routes/(auth)/(set-new-password)/set-new-password.tsx";
+import * as $_auth_sign_in_middleware from "./routes/(auth)/(sign-in)/_middleware.ts";
 import * as $_auth_sign_in_sign_in from "./routes/(auth)/(sign-in)/sign-in.tsx";
 import * as $_404 from "./routes/_404.tsx";
 import * as $_500 from "./routes/_500.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $_layout from "./routes/_layout.tsx";
 import * as $_middleware from "./routes/_middleware.tsx";
+import * as $admin_middleware from "./routes/admin/_middleware.ts";
 import * as $admin_index from "./routes/admin/index.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $alert from "./islands/alert.tsx";
@@ -25,21 +33,32 @@ import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
+    "./routes/(auth)/(forgot-email)/_middleware.ts":
+      $_auth_forgot_email_middleware,
     "./routes/(auth)/(forgot-email)/forgot-email.tsx":
       $_auth_forgot_email_forgot_email,
+    "./routes/(auth)/(forgot-password)/_middleware.ts":
+      $_auth_forgot_password_middleware,
     "./routes/(auth)/(forgot-password)/forgot-password.tsx":
       $_auth_forgot_password_forgot_password,
+    "./routes/(auth)/(log-out)/_middleware.ts": $_auth_log_out_middleware,
     "./routes/(auth)/(log-out)/log-out.ts": $_auth_log_out_log_out,
+    "./routes/(auth)/(profile)/_middleware.ts": $_auth_profile_middleware,
     "./routes/(auth)/(profile)/profile.tsx": $_auth_profile_profile,
+    "./routes/(auth)/(register)/_middleware.ts": $_auth_register_middleware,
     "./routes/(auth)/(register)/register.tsx": $_auth_register_register,
+    "./routes/(auth)/(set-new-password)/_middleware.ts":
+      $_auth_set_new_password_middleware,
     "./routes/(auth)/(set-new-password)/set-new-password.tsx":
       $_auth_set_new_password_set_new_password,
+    "./routes/(auth)/(sign-in)/_middleware.ts": $_auth_sign_in_middleware,
     "./routes/(auth)/(sign-in)/sign-in.tsx": $_auth_sign_in_sign_in,
     "./routes/_404.tsx": $_404,
     "./routes/_500.tsx": $_500,
     "./routes/_app.tsx": $_app,
     "./routes/_layout.tsx": $_layout,
     "./routes/_middleware.tsx": $_middleware,
+    "./routes/admin/_middleware.ts": $admin_middleware,
     "./routes/admin/index.tsx": $admin_index,
     "./routes/index.tsx": $index,
   },

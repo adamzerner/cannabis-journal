@@ -1,5 +1,6 @@
 import { Handlers } from "$fresh/server.ts";
 import { getHashedValue, redirect } from "@/utilities/index.ts";
+import { fetchUserByEmail, updateUser } from "@/services/db/index.ts";
 
 export const handler: Handlers = {
   POST: async (req) => {
@@ -18,7 +19,7 @@ export const handler: Handlers = {
       );
     }
 
-    const user = { resetPasswordToken: null }; // TODO fetch user by email
+    const user = await fetchUserByEmail(email);
 
     if (!user) {
       console.warn(`Unable to find user with email: ${email}`);
@@ -37,8 +38,10 @@ export const handler: Handlers = {
     }
 
     const hashedPassword = await getHashedValue(newPassword);
-
-    // TODO update user in database
+    await updateUser({
+      ...user,
+      hashedPassword,
+    });
 
     const resendApiResponse = await fetch("https://api.resend.com/emails", {
       method: "POST",

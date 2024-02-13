@@ -1,6 +1,6 @@
 import { Handlers } from "$fresh/server.ts";
 import { redirect } from "@/utilities/index.ts";
-import { getCookies } from "$std/http/cookie.ts";
+import { deleteCookie, getCookies } from "$std/http/cookie.ts";
 import {
   destroySession,
   destroyUser,
@@ -9,6 +9,8 @@ import {
 
 export const handler: Handlers = {
   POST: async (req) => {
+    const url = new URL(req.url);
+    const headers = new Headers(req.headers);
     const cookies = getCookies(req.headers);
     const userId = await fetchUserIdFromSession(cookies.sessionId);
 
@@ -16,9 +18,11 @@ export const handler: Handlers = {
       destroyUser(userId),
       destroySession(cookies.sessionId),
     ]);
+    deleteCookie(headers, "sessionId", { path: "/", domain: url.hostname });
 
     return redirect(
-      "/forgot-password?alert=You'll receive an email with instructions for resetting your password.&alertVariant=success",
+      "/?alert=Your account has been successfully deleted.&alertVariant=success",
+      headers,
     );
   },
 };

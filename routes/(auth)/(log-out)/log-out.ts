@@ -16,8 +16,6 @@ export const handler: Handlers = {
       console.warn("Trying to log out without a session id.");
     }
 
-    headers.set("location", "/");
-
     return redirect("/", headers, 303);
   },
 };

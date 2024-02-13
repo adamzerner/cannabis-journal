@@ -1,7 +1,9 @@
 import { PageProps } from "$fresh/server.ts";
-import { Button, H1, Link, Text } from "rfui";
+import { H1, Link, Text } from "rfui";
 import { MiddlewareState } from "@/types/index.ts";
 import { DeleteAccountForm } from "./(_islands)/delete-account-form.tsx";
+
+export { handler } from "./(_helpers)/handler.ts";
 
 export default ({ state }: PageProps<unknown, MiddlewareState>) => {
   const user = state.user;

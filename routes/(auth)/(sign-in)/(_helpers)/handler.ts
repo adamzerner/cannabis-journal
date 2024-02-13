@@ -2,8 +2,11 @@ import { redirect } from "@/utilities/redirect.ts";
 import { Handlers } from "$fresh/server.ts";
 import { getHashedValue } from "@/utilities/get-hashed-value.ts";
 import { Cookie, setCookie } from "$std/http/cookie.ts";
-import { fetchUserByEmail } from "@/services/db/user/fetch-user-by-email.ts";
-import { createSession } from "@/services/db/index.ts";
+import {
+  checkIfEmailInUse,
+  createSession,
+  fetchUserByEmail,
+} from "@/services/db/index.ts";
 
 export const handler: Handlers = {
   POST: async (req) => {
@@ -21,6 +24,14 @@ export const handler: Handlers = {
     } else if (!password) {
       return redirect(
         "/sign-in?alert=You forgot to enter a password.&alertVariant=danger",
+      );
+    }
+
+    const isEmailInUse = await checkIfEmailInUse(email);
+
+    if (!isEmailInUse) {
+      return redirect(
+        "/sign-in?alert=Invalid email and/or password.&alertVariant=danger",
       );
     }
 

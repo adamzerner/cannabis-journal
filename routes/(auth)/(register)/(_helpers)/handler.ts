@@ -14,7 +14,7 @@ export const handler: Handlers = {
       );
     }
 
-    const isEmailInUse = !!(await fetchUserByEmail(email)).value;
+    const isEmailInUse = !!(await fetchUserByEmail(email));
 
     if (isEmailInUse) {
       return redirect(

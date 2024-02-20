@@ -7,7 +7,7 @@ export default () => {
   return (
     <main>
       <H1>Sign in</H1>
-      <form method="post" class="flex flex-col gap-5 w-[600px]">
+      <form method="post" class="flex w-[600px] flex-col gap-5">
         <FormField
           required
           label="Email"
@@ -25,7 +25,7 @@ export default () => {
         <FormField label="Remember me" type="checkbox" name="remember-me" />
         <Button type="submit" class="mt-2 self-start">Sign in</Button>
       </form>
-      <Flex class="gap-3 text-sm mt-8">
+      <Flex class="mt-8 gap-3 text-sm">
         <Link href="/forgot-password">Forgot password</Link>
         <Link href="/forgot-email">Forgot email</Link>
       </Flex>

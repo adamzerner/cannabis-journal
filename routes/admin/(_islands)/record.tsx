@@ -19,7 +19,7 @@ export const Record = ({ record }: { record: any }) => {
         </Flex>
         {areDetailsVisible &&
           (
-            <pre class="mt-2 p-6 bg-neutral-100 ">
+            <pre class="mt-2 bg-neutral-100 p-6">
             {JSON.stringify(record, null, 2)}
             </pre>
           )}

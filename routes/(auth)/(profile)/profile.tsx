@@ -18,7 +18,7 @@ export default ({ state }: PageProps<unknown, MiddlewareState>) => {
       <Text class="!gap-8">
         <div>
           <div class="text-xl">Email: {user.email}</div>
-          <div class="text-neutral-500 mt-2">
+          <div class="mt-2 text-neutral-500">
             To update your email, contact{" "}
             <Link href="mailto:adamzerner@protonmail.com">
               adamzerner@protonmail.com
@@ -28,7 +28,7 @@ export default ({ state }: PageProps<unknown, MiddlewareState>) => {
         </div>
         <div>
           <div class="text-xl">Password</div>
-          <div class="text-neutral-500 mt-2">
+          <div class="mt-2 text-neutral-500">
             To change your password, please log out and go through the{" "}
             <Link href="/forgot-password">
               forgot password

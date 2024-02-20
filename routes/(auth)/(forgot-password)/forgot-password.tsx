@@ -16,7 +16,7 @@ export default () => {
         </p>
       </Text>
       {
-        /* <form method="post" class="flex flex-col gap-5 w-[600px]">
+        /* <form method="post" class="flex w-[600px] flex-col gap-5">
         <FormField
           required
           label="Email"

@@ -7,7 +7,7 @@ export default () => {
   return (
     <main>
       <H1>Register</H1>
-      <form method="post" class="flex flex-col gap-5 w-[600px]">
+      <form method="post" class="flex w-[600px] flex-col gap-5">
         <FormField
           required
           label="Email"

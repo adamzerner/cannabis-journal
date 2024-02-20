@@ -14,7 +14,7 @@ export default ({ Component, state, route, url }: PageProps) => {
   return (
     <>
       <Navbar isLoggedIn={isLoggedIn} route={route} />
-      <Container size="lg" class="mt-8 mb-6 font-sans min-h-[200px]">
+      <Container size="lg" class="mb-6 mt-8 min-h-[200px] font-sans">
         {alert &&
           (
             <Alert variant={alertVariant}>
